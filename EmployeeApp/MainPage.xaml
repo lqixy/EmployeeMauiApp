@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:model="clr-namespace:EmployeeApp.Models"
+             xmlns:vm="clr-namespace:EmployeeApp.ViewModels"
+             x:DataType="vm:EmployeeViewModel"
+             x:Class="EmployeeApp.MainPage"
+             Title="Employee List">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="add" Command="{Binding GoToDetailsAsyncCommand}" />
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <Style TargetType="toolkit:AvatarView">
+            <Setter Property="BackgroundColor" Value="MediumPurple"/>
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="Start" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid RowSpacing="1" ColumnDefinitions="*,*">
+        <CollectionView Grid.ColumnSpan="2" ItemsSource="{Binding Employees}">
+            <CollectionView.EmptyView>
+                <Label Text="Empty" />
+
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Employee" >
+                    <Grid Padding="10" >
+                        <Frame HeightRequest="120">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EmployeeViewModel}}, Path= DisplayActionCommand}"
+                                    CommandParameter="{Binding .}"/>
+                                <!--<SwipeGestureRecognizer Direction="Right" Command="{Binding Source={RelativeSource AncestorType={x:Type vm:EmployeeViewModel}}, Path= RightSwipedCommand}" />-->
+                            </Frame.GestureRecognizers>
+
+                            <Grid Padding="0" ColumnDefinitions="120,*" >
+                                <toolkit:AvatarView Text="{Binding FirstName}" />
+
+                                <VerticalStackLayout  Grid.Column="1" VerticalOptions="Center" >
+                                    <!--<Label Text="{Binding FirstName}"/>-->
+                                    <Label Text="{Binding LastName}"/>
+                                    <Label Text="{Binding Email}"/>
+                                    <Label Text="{Binding BirthDay, StringFormat='{0:yyyy-MM-dd}'}"/>
+                                </VerticalStackLayout>
+
+                            </Grid>
+                        </Frame>
+
+                    </Grid>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>

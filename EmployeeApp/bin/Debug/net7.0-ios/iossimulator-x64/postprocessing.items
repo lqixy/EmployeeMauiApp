@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="EmployeeApp.app/EmployeeApp">
+      <BCSymbolMapName>EmployeeApp.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>EmployeeApp.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/liuqi/Desktop/Project/CSharp/Maui/Demo/EmployeeApp/EmployeeApp/obj/Debug/net7.0-ios/iossimulator-x64/mtouch-symbols.list</SymbolFile>
+      <DSymName>EmployeeApp.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/liuqi/Desktop/Project/CSharp/Maui/Demo/EmployeeApp/EmployeeApp</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>

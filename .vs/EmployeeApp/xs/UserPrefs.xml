@@ -1,0 +1,57 @@
+﻿<Properties StartupConfiguration="{84E85329-6F64-4609-872D-3419B3831BCA}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EmployeeApp/ViewModels/EmployeeDetailsViewModel.cs">
+    <Files>
+      <File FileName="EmployeeApp/Pages/EmployeesDetailsPage.xaml" Line="111" Column="66" IsPinned="True" />
+      <File FileName="EmployeeApp/MainPage.xaml" Line="37" Column="149" IsPinned="True" />
+      <File FileName="EmployeeApp/ViewModels/EmployeeViewModel.cs" Line="43" Column="18" IsPinned="True" />
+      <File FileName="EmployeeApp/ViewModels/EmployeeDetailsViewModel.cs" Line="18" Column="29" IsPinned="True" />
+      <File FileName="EmployeeApp/MainPage.xaml.cs" Line="24" Column="1" IsPinned="True" />
+      <File FileName="EmployeeApp/Platforms/iOS/Program.cs" Line="13" Column="1" />
+      <File FileName="EmployeeApp/MauiProgram.cs" Line="22" Column="67" />
+      <File FileName="EmployeeApp/Services/IEmployeeService.cs" Line="9" Column="16" />
+      <File FileName="EmployeeApp/Services/EmployeeService.cs" Line="23" Column="29" />
+      <File FileName="EmployeeApp/Constants.cs" Line="13" Column="106" />
+      <File FileName="EmployeeApp/EmployeeDatabase.cs" Line="59" Column="6" />
+      <File FileName="EmployeeApp/App.xaml.cs" Line="1" Column="1" />
+      <File FileName="EmployeeApp/AppShell.xaml.cs" Line="11" Column="91" />
+      <File FileName="../../../../../../.nuget/packages/communitytoolkit.maui/5.0.0/readme.txt" Line="1" Column="1" />
+      <File FileName="EmployeeApp/Models/Employee.cs" Line="25" Column="43" />
+      <File FileName="EmployeeApp/Pages/EmployeesDetailsPage.xaml.cs" Line="14" Column="36" />
+      <File FileName="EmployeeApp/App.xaml" Line="1" Column="1" />
+      <File FileName="EmployeeApp/Resources/Styles/Colors.xaml" Line="7" Column="5" />
+      <File FileName="EmployeeApp/Resources/Styles/Styles.xaml" Line="384" Column="140" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EmployeeApp" expanded="True">
+            <Node name="EmployeeApp" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="EmployeesDetailsPage.xaml" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Styles" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="EmployeeDetailsViewModel.cs" selected="True" />
+              </Node>
+              <Node name="App.xaml" expanded="True" />
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="MainPage.xaml" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.387EAAB8-719B-4833-ACC6-E509BAC90545" />
+  <MonoDevelop.Ide.ItemProperties.EmployeeApp PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.387EAAB8-719B-4833-ACC6-E509BAC90545" />
+</Properties>

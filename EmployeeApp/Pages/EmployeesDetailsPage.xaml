@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:EmployeeApp.ViewModels"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:DataType="vm:EmployeeDetailsViewModel"
+             x:Class="EmployeeApp.Pages.EmployeesDetailsPage">
+    <ContentPage.Resources>
+
+        <Style TargetType="Label">
+            <Setter Property="HorizontalOptions"  Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+            <Setter Property="FontSize" Value="Medium" />
+            <Setter Property="TextColor" Value="Gray"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="HeightRequest" Value="20"/>
+
+        </Style>
+
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red"/>
+
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green"/>
+
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="WidthRequest" Value="120"/>
+            <Setter Property="FontSize" Value="Body" />
+        </Style>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="300,50"
+           ColumnDefinitions="*,*">
+        <Grid Grid.ColumnSpan="2" RowDefinitions="*,*,*,*,*"
+              ColumnDefinitions="100,*">
+            <Label Text="First Name" />
+            <Entry Grid.Column="1" Grid.ColumnSpan="3" Placeholder="Entry First Name"
+                   Text="{Binding Employee.FirstName}" HeightRequest="20">
+                <Entry.Behaviors>
+                    <toolkit:CharactersValidationBehavior
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"
+                        CharacterType="Letter"
+                        MinimumLength="2"
+                        />
+
+                </Entry.Behaviors>
+
+            </Entry>
+            <Label Text="Last Name" Grid.Row="1"/>
+            <Entry Grid.Row="1"  Grid.Column="1" Placeholder="Entry Last Name"
+                  Text="{Binding Employee.LastName}"  HeightRequest="20">
+                <Entry.Behaviors>
+                    <toolkit:CharactersValidationBehavior
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"
+                        CharacterType="Letter"
+                        MinimumLength="2"/>
+
+                </Entry.Behaviors>
+
+            </Entry>
+            <Label Text="Email" Grid.Row="2" />
+            <Entry Grid.Row="2" Grid.Column="1" Placeholder="Entry Email"
+                   Text="{Binding Employee.Email}"
+                   HeightRequest="20">
+                <Entry.Behaviors>
+                    <toolkit:EmailValidationBehavior
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"/>
+
+                </Entry.Behaviors>
+
+            </Entry>
+            <Label Text="Gender" Grid.Row="3"/>
+            <HorizontalStackLayout Grid.Row="3" Grid.Column="1" RadioButtonGroup.GroupName="gender"
+                                   HorizontalOptions="Center"
+                                   RadioButtonGroup.SelectedValue="{Binding Employee.Gender}"
+                                   >
+                <RadioButton Content="male" Value="0" />
+                <RadioButton Grid.Column="1" Content="famale" Value="1" />
+
+            </HorizontalStackLayout>
+            <Label Text="BirthDay" Grid.Row="4" />
+            <DatePicker Grid.Row="4" Grid.Column="1" Date="{Binding Employee.BirthDay}" HorizontalOptions="Center" MinimumDate="01/01/1900"
+                        MaximumDate="{x:Static sys:DateTime.Now}" />
+        </Grid>
+
+        <HorizontalStackLayout Grid.Row="1" Grid.ColumnSpan="3"
+                               HorizontalOptions="Center"
+                               Spacing="10" Margin="5">
+            <Button Text="Save" Command="{Binding SaveAsyncCommand}"
+                    CommandParameter="{Binding Employee}"/>
+            <!--<Button Text="Delete" Command="{Binding DeleteAsyncCommand}"
+                    CommandParameter="{Binding Employee.Id}"/>-->
+            <Button Text="Cancel" Command="{Binding CancelAsyncCommand}"/>
+        </HorizontalStackLayout>
+        
+    </Grid>
+
+
+</ContentPage>
